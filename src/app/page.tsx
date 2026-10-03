@@ -1,3 +1,4 @@
+import Link from "next/link";
 const steps = [
   { title: "Find local shops", text: "Search by your postcode" },
   { title: "Fill your basket", text: "Everyday essentials" },
@@ -12,9 +13,9 @@ export default function Home() {
           aria-label="Main"
           className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4"
         >
-          <a href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             Foodash
-          </a>
+          </Link>
           <ul className="flex gap-6">
             <li>
               <a href="#" className="hover:underline">
