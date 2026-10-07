@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PostcodeSearch from "@/components/PostcodeSearch";
 const steps = [
   { title: "Find local shops", text: "Search by your postcode" },
   { title: "Fill your basket", text: "Everyday essentials" },
@@ -45,28 +46,7 @@ export default function Home() {
             Everyday essentials from independent shops near you
           </p>
 
-          <form
-            role="search"
-            className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row"
-          >
-            <label htmlFor="postcode" className="sr-only">
-              Enter your postcode
-            </label>
-            <input
-              id="postcode"
-              name="postcode"
-              type="text"
-              autoComplete="postal-code"
-              placeholder="Enter your postcode, e.g. NE61 1AA"
-              className="min-h-12 flex-1 rounded-lg border border-gray-300 bg-white px-4 text-base"
-            />
-            <button
-              type="submit"
-              className="min-h-12 rounded-lg bg-honey px-6 font-bold text-charcoal hover:bg-honey-dark"
-            >
-              Find shops
-            </button>
-          </form>
+          <PostcodeSearch />
         </section>
 
         <section aria-labelledby="how-it-works" className="pb-16">
