@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
-
+import Header from "@/components/Header";
 const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -22,6 +22,7 @@ export default function RootLayout({
       <body
         className={`${atkinson.variable} font-sans antialiased bg-warmwhite text-charcoal`}
       >
+        <Header />
         {children}
       </body>
     </html>
