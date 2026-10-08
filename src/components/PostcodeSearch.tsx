@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { isValidUkPostcode } from "@/lib/postcode";
 
 export default function PostcodeSearch() {
   const [postcode, setPostcode] = useState("");
   const [postError, setPostError] = useState("");
+  const router = useRouter();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -14,9 +16,10 @@ export default function PostcodeSearch() {
       return;
     }
     setPostError("");
+    router.push(`/shops?postcode=${encodeURIComponent(postcode.trim())}`);
   }
   return (
-    <div className="main">
+    <>
       <form
         onSubmit={handleSubmit}
         role="search"
@@ -53,6 +56,6 @@ export default function PostcodeSearch() {
           {postError}
         </p>
       )}
-    </div>
+    </>
   );
 }
