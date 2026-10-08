@@ -14,7 +14,7 @@ export default async function ShopsPage({
           We could not recognise the postcode
         </h1>
         <p className="mt-3 text-lg text-muted">
-          Check it and try agian for example NE61 1AA
+          Check it and try again for example NE61 1AA
         </p>
         <Link
           href="/"
