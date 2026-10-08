@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body
-        className={`${atkinson.variable} font-sans antialiased bg-warmwhite text-charcoal`}
+        className={`${atkinson.variable} font-sans antialiased bg-warmwhite text-charcoal min-h-screen flex flex-col`}
       >
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
+
+        <Footer />
       </body>
     </html>
   );

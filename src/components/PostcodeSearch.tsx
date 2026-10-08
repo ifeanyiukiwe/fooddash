@@ -23,6 +23,7 @@ export default function PostcodeSearch() {
       <form
         onSubmit={handleSubmit}
         role="search"
+        action="/shops"
         className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row"
       >
         <label htmlFor="postcode" className="sr-only">
