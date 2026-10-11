@@ -44,11 +44,19 @@ export default async function ShopsPage({
           ? `Shops near ${postcode.toLocaleUpperCase()}`
           : "Shops near you"}
       </h1>
-      <ul className="grid gap-4 mt-6  sm:grid-cols-2 lg:grid-cols-3">
+      <p className="mt-2">
+        <Link
+          href="/"
+          className="font-bold text-petrol underline hover:text-petrol-dark"
+        >
+          Change postcode
+        </Link>
+      </p>
+      <ul className="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {sortedShops.map((shop) => (
           <li
             key={shop.id}
-            className={`rounded-xl border border-stone-200 bg-white p-5  ${shop.isOpen ? "" : "opacity-60"}`}
+            className={`rounded-xl border border-stone-200 bg-white p-5 ${shop.isOpen ? "" : "opacity-60"}`}
           >
             <p className="font-bold text-petrol">{shop.name}</p>
             <p>{shop.description}</p>

@@ -43,7 +43,7 @@ export default function PostcodeSearch() {
         />
         <button
           type="submit"
-          className="min-h-12 rounded-lg bg-honey px-6 font-bold text-charcoal hover:bg-honey-dark"
+          className="min-h-12 rounded-lg bg-honey px-6 font-bold text-charcoal hover:bg-honey-dark cursor-pointer"
         >
           Find shops
         </button>
