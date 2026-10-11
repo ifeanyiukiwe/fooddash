@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { isValidUkPostcode } from "@/lib/postcode";
+import { shops } from "@/data/shops";
 export default async function ShopsPage({
   searchParams,
 }: {
@@ -32,6 +33,21 @@ export default async function ShopsPage({
           ? `Shops near ${postcode.toLocaleUpperCase()}`
           : "Shops near you"}
       </h1>
+      <ul className="grid gap-4 mt-6  sm:grid-cols-4">
+        {shops.map((shop) => (
+          <li
+            key={shop.id}
+            className="rounded-xl border border-stone-200 bg-white p-5 text-center"
+          >
+            <p className="font-bold text-petrol">{shop.name}</p>
+            <p>{shop.description}</p>
+            <small className="mt-1 text-sm text-muted">
+              {shop.isOpen ? "Open" : "Closed"}
+            </small>
+            <p>{`${shop.deliveryMinMins} - ${shop.deliveryMaxMins} mins`}</p>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
