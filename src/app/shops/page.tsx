@@ -33,17 +33,20 @@ export default async function ShopsPage({
           ? `Shops near ${postcode.toLocaleUpperCase()}`
           : "Shops near you"}
       </h1>
-      <ul className="grid gap-4 mt-6  sm:grid-cols-4">
+      <ul className="grid gap-4 mt-6  sm:grid-cols-2 lg:grid-cols-3">
         {shops.map((shop) => (
           <li
             key={shop.id}
-            className="rounded-xl border border-stone-200 bg-white p-5 text-center"
+            className={`rounded-xl border border-stone-200 bg-white p-5  ${shop.isOpen ? "" : "opacity-60"}`}
           >
             <p className="font-bold text-petrol">{shop.name}</p>
             <p>{shop.description}</p>
-            <small className="mt-1 text-sm text-muted">
+            <p
+              className={`mt-2 text-sm font-bold ${shop.isOpen ? "text-sage" : "text-muted"}`}
+            >
+              <span aria-hidden="true">{shop.isOpen ? "● " : "○ "}</span>
               {shop.isOpen ? "Open" : "Closed"}
-            </small>
+            </p>
             <p>{`${shop.deliveryMinMins} - ${shop.deliveryMaxMins} mins`}</p>
           </li>
         ))}
