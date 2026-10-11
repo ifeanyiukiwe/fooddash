@@ -26,6 +26,17 @@ export default async function ShopsPage({
       </main>
     );
   }
+
+  const sortedShops = [...shops].sort((a, b) => {
+    if (a.isOpen && !b.isOpen) {
+      return -1;
+    } else if (!a.isOpen && b.isOpen) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
   return (
     <main className="mx-auto max-w-5xl px-5 pt-5">
       <h1 className="text-3xl font-bold  sm:text-4xl">
@@ -34,7 +45,7 @@ export default async function ShopsPage({
           : "Shops near you"}
       </h1>
       <ul className="grid gap-4 mt-6  sm:grid-cols-2 lg:grid-cols-3">
-        {shops.map((shop) => (
+        {sortedShops.map((shop) => (
           <li
             key={shop.id}
             className={`rounded-xl border border-stone-200 bg-white p-5  ${shop.isOpen ? "" : "opacity-60"}`}

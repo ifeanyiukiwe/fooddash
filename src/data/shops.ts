@@ -12,7 +12,7 @@ export const shops: Shop[] = [
   {
     id: "dannies-corner-shop",
     name: "Dannies",
-    description: "Groceries, snacks and everyday essentials",
+    description: "Groceries and everyday essentials",
     isOpen: true,
     deliveryMinMins: 10,
     deliveryMaxMins: 20,
@@ -28,7 +28,7 @@ export const shops: Shop[] = [
   {
     id: "esties-corner-shop",
     name: "Esties",
-    description: "Fresh bread, cakes and pastries baked daily",
+    description: "Fresh bread and daily baked pastries",
     isOpen: true,
     deliveryMinMins: 15,
     deliveryMaxMins: 25,
@@ -36,7 +36,7 @@ export const shops: Shop[] = [
   {
     id: "tasties-corner-shop",
     name: "Tasties",
-    description: "Toys, games and gifts for all ages",
+    description: "Toys and games for all ages",
     isOpen: false,
     deliveryMinMins: 25,
     deliveryMaxMins: 40,
